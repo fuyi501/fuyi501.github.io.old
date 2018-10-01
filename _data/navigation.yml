@@ -1,0 +1,21 @@
+header:
+  - titles:
+      en:       index
+      zh:       首页
+      zh-Hans:  首页
+      zh-Hant:  首页
+    url:        /
+  - titles:
+      en:       Archive
+      zh:       归档
+      zh-Hans:  归档
+      zh-Hant:  歸檔
+    url:        /archive.html
+  - titles:
+      en:       About
+      zh:       关于
+      zh-Hans:  关于
+      zh-Hant:  關於
+    url:        /about.html
+  - title:      coding
+    url:        https://coding.net/u/fuyi501
