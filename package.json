@@ -1,7 +1,7 @@
 {
-  "name": "jekyll-text-theme",
-  "version": "2.2.0",
-  "description": "A super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc.",
+  "name": "fuwenwei-blog",
+  "version": "1.0.0",
+  "description": "付文伟的博客",
   "scripts": {
     "build": "bundle exec jekyll build",
     "serve": "bundle exec jekyll serve -H 0.0.0.0",
@@ -17,19 +17,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kitian616/jekyll-TeXt-theme.git"
+    "url": "git+https://github.com/fuyi501/fuyi501.github.io"
   },
   "keywords": [
     "jekyll",
     "jekyll-theme",
     "jekyll-template"
   ],
-  "author": "Tian Qi",
+  "author": "Wenwei Fu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kitian616/jekyll-TeXt-theme/issues"
+    "url": "https://github.com/fuyi501/fuyi501.github.io/issues"
   },
-  "homepage": "https://github.com/kitian616/jekyll-TeXt-theme",
+  "homepage": "https://blog.fuwenwei.com",
   "devDependencies": {
     "eslint": "^5.4.0",
     "stylelint": "^9.5.0",
