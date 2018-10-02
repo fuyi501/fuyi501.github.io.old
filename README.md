@@ -1,85 +1,170 @@
-# [TeXt Theme](https://github.com/kitian616/jekyll-TeXt-theme)
+---
+title:  博客配置
+key: sum-20180102
+tags: 博客 
+modify_date: 2018-01-13 00:00:00 +08:00
+comment: true 
+excerpt_type: html 
+---
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-text-theme.svg)](https://github.com/kitian616/jekyll-TeXt-theme/releases)
-[![license](https://img.shields.io/github/license/kitian616/jekyll-TeXt-theme.svg)](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/LICENSE)
-[![Travis](https://img.shields.io/travis/kitian616/jekyll-TeXt-theme.svg)](https://travis-ci.org/kitian616/jekyll-TeXt-theme)
+## 博客主题
 
-![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg)
+博客使用 jekyll TeXt 主题，github 地址：`https://github.com/kitian616/jekyll-TeXt-theme`
 
-![TeXt Theme Details](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-layouts.png)
+## 安装主题
 
-TeXt is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.
+从 github 克隆主题代码 `git clone https://github.com/kitian616/jekyll-TeXt-theme.git`，或者下载压缩包
 
-[Change Log](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/CHANGELOG.md) | [中文文档](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/README-zh.md)
+<!--more-->
 
-## Features
+## 本地预览
 
-- Responsive
-- Skins
-- Highlight Theme
-- Table of contents
-- Authors
-- Multi-language support
-- Search
-- Semantic HTML
-- RSS（[jekyll-feed](https://github.com/jekyll/jekyll-feed))
-- Contact information (Email, Facebook, Twitter, Linkedin, Weibo, Zhihu, etc)
-- Mathematical formula ([MathJax](https://www.mathjax.org/))
-- Flowchart, Sequence diagram, Gantt diagram ([mermaid](https://mermaidjs.github.io/))
-- Line Chart, Bar Chart, Radar Chart, Pie Chart ([chartjs](http://www.chartjs.org/))
-- Page views ([LeanCloud](https://leancloud.cn/))
-- Comments ([Disqus](https://disqus.com/))
-- Google Analytics
+下载好代码后，确保自己已经安装完成 jekyll 和 bundle ，执行
+```sh
+bundle install # 安装依赖
+bundle exec jekyll serve # 启动项目
+```
+然后就可以访问 `http://localhost:4000` 来预览博客网站了
 
-## Skins
+## 配置 
 
-TeXt has 6 built-in skins, you can also set up your own skin.
+[具体详情](https://tianqi.name/jekyll-TeXt-theme/docs/zh/configuration)
 
-| `default` | `dark` | `forest` |
-| --- |  --- | --- |
-| ![Default](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.jpg) | ![Dark](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.jpg) | ![Forest](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.jpg) |
+[参考项目1](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/docs/_config.yml)
 
-| `ocean` | `chocolate` | `orange` |
-| --- |  --- | --- |
-| ![Ocean](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg) | ![Chocolate](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg) | ![Orange](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg) |
+[参考项目2](https://github.com/kitian616/kitian616.github.io/blob/master/_posts/2015-10-14-about-this-blog.md)
 
-### Highlight Theme
+### css 修改
 
-TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highlight theme.
+修改代码位于 `/_includes/head.html`
 
-| `tomorrow` | `tomorrow-night` | `tomorrow-night-eighties` | `tomorrow-night-blue` | `tomorrow-night-bright` |
-| --- |  --- | --- | --- |  --- |
-| ![Tomorrow](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png) | ![Tomorrow Night](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png) | ![Tomorrow Night Eighties](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png) | ![Tomorrow Night Blue](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png) | ![Tomorrow Night Bright](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png) |
+### 代码高亮
 
-## Documentation
+`highlight_theme: "tomorrow-night-bright"`
 
-### Start
+### url
 
-- [Quick Start](https://tianqi.name/jekyll-TeXt-theme/docs/en/quick-start)
-- [Update form 1.x to 2.x](https://tianqi.name/jekyll-TeXt-theme/docs/en/update-form-1-to-2)
+`https://fuwenwei.com` 和 `https://blog.fuwenwei.com`
 
-### Customization
+### GitHub 源码仓库
 
-- [Configuration](https://tianqi.name/jekyll-TeXt-theme/docs/en/configuration)
-- [Navigation](https://tianqi.name/jekyll-TeXt-theme/docs/en/navigation)
-- [Layouts](https://tianqi.name/jekyll-TeXt-theme/docs/en/layouts)
-- [Logo and Favicon](https://tianqi.name/jekyll-TeXt-theme/docs/en/logo-and-favicon)
-- [Authors](https://tianqi.name/jekyll-TeXt-theme/docs/en/authors)
+`repository: fuyi501/fuyi501.github.io` 这个设置可以在文章详情页点击在github进行编辑
 
-### Content
+## 文章配置项
 
-- [Writing Posts](https://tianqi.name/jekyll-TeXt-theme/docs/en/writing-posts)
-- [Markdown Enhancements](https://tianqi.name/jekyll-TeXt-theme/docs/en/markdown-enhancements)
-- [Additional styles](https://tianqi.name/jekyll-TeXt-theme/docs/en/additional-styles)
+### 文章摘要
 
-## Demo Pages
+该主题的摘要有两种模式——TEXT 模式和 HTML 模式。 当 _config.yml 配置项 excerpt_type 的值为 text 时是 TEXT 模式，为 html 时是 HTML 模式，默认为 TEXT 模式。
+设置为 html 时摘要为 HTML 文档，与文章内容一致，并且 默认展示整篇文章的内容。若想控制摘要内容，需要在文章中想要显示到的地方加上 <!--more-->。
 
-| Name | Description |
-| --- | --- |
-| [Home](https://tianqi.name/jekyll-TeXt-theme/test/) | Home page |
-| [Archive](https://tianqi.name/jekyll-TeXt-theme/archive.html) | Archive page |
-| [Layout Examples](https://tianqi.name/jekyll-TeXt-theme/samples.html) | Examples for different layouts |
+### 在 github 修改
 
-## License
+修改代码位于 `/_includes/article-header.html`
 
-TeXt Theme is [MIT licensed](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/LICENSE).
+### gitalk 评论
+
+### leancloud 统计文章点击量
+
+[leancloud](https://leancloud.cn/)
+
+### Google Analytics 站点统计
+
+[Google Analytics](https://analytics.google.com/analytics/web/)
+
+### logo
+
+可以通过替换 _includes/svg/logo.svg 来设置你的 Logo
+
+### Favicon
+
+推荐使用 [RealFaviconGenerator](https://realfavicongenerator.net/) 来生成 Favicon
+
+## 撰写博客
+
+使用 markdown 开撰写博客文章，文章文件名遵循 `年-月-日-标题.md` 格式，文章开头需包含 YAML 头信息，如下所示：
+
+```yaml
+---
+layout: article
+title:  博客配置
+key: sum-100018 # 页面的唯一标识符，供评论系统和点击量统计使用。
+tags: 博客 
+# date: 2018-01-12 00:00:00 +08:00
+modify_date: 2018-01-12 00:00:00 +08:00
+comment: true # 是否开启评论支持，默认开启，设置为 false 关闭。
+excerpt_type: html # text (default), html
+---
+```
+
+### markdown 增强
+
+| 增强项 | 描述 |
+| --------------- | ----------- |
+| **Mathjax** | 在文章中方便的加入数学公式，使用 MathML、LaTeX 和 ASCIIMathML 语法 | [示例](https://tianqi.name/jekyll-TeXt-theme/post/2017/07/07/mathjax.html) |
+| **Mermaid** | 在文章中方便的加入流程图 | [示例](https://tianqi.name/jekyll-TeXt-theme/post/2017/06/06/mermaid.html) |
+| **Chart**   | 在文章中方便的加入可交互的图表 | [示例](https://tianqi.name/jekyll-TeXt-theme/post/2017/05/05/chart.html) |
+
+
+### 附加样式
+
+#### 提示
+
+| 样式名称 |
+| ---- |
+| **success** |
+| **info** |
+| **warning** |
+| **error** |
+
+Success Text.
+{:.success}
+
+Info Text.
+{:.info}
+
+Warning Text.
+{:.warning}
+
+Error Text.
+{:.error}
+
+**markdown:**
+
+    Success Text.
+    {:.success}
+^
+    Info Text.
+    {:.info}
+^
+    Warning Text.
+    {:.warning}
+^
+    Error Text.
+    {:.error}
+
+#### 标签
+
+| Class Names |
+| ---- |
+| **success** |
+| **info** |
+| **warning** |
+| **error** |
+
+`success`{:.success}
+
+`info`{:.info}
+
+`warning`{:.warning}
+
+`error`{:.error}
+
+**markdown:**
+
+    `success`{:.success}
+^
+    `info`{:.info}
+^
+    `warning`{:.warning}
+^
+    `error`{:.error}
