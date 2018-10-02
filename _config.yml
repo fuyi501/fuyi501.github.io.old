@@ -19,7 +19,7 @@
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: tomorrow-night-bright # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://www.fuwenwei.com # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl : / # does not include hostname
+baseurl : # does not include hostname
 title   : 付文伟
 description: > # this means to ignore newlines until "Language & timezone"
   付文伟的博客
@@ -52,7 +52,7 @@ author:
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
-repository: u/fuyi501/p/fuwenweiBlog
+repository: fuyi501/fuyi501.github.io
 repository_tree: master
 
 
@@ -69,7 +69,7 @@ paths:
 ##############################
 ## excerpt
 excerpt_separator: <!--more-->
-# excerpt_type: text # text (default), html , 2.2 版本在文章中设置
+excerpt_type: text # text (default), html , 2.2 版本在文章中设置
 
 ## license
 license: CC-BY-NC-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
@@ -82,14 +82,14 @@ toc:
 ## => Markdown Enhancements
 ##############################
 ## Mathjax
-mathjax: # false (default), true
-mathjax_autoNumber: # false (default), true
+mathjax: true # false (default), true # 是否开启 Mathjax 公式支持，设置为 true 开启。
+mathjax_autoNumber: true # false (default), true 该页的 Mathjax 公式是否自动编号，设置为 true 开启。
 
 ## Mermaid
-mermaid: # false (default), true
+mermaid: true # false (default), true # 是否开启 Mermaid 流程图支持，设置为 true 开启。
 
 ## Chart
-chart: # false (default), true
+chart: true # false (default), true # 是否开启 Chart 图表支持，设置为 true 开启。
 
 
 ## => Paginate
@@ -106,21 +106,21 @@ sources: # bootcdn (default), unpkg
 ## => Comments
 ##############################
 comments:
-  provider: disqus # false (default), "disqus", "gitalk", "custom"
+  provider: gitalk # false (default), "disqus", "gitalk", "custom"
 
   ## Disqus
   disqus:
-    shortname: blog-fzgqryg6rv # the Disqus shortname for the site
+    shortname: # the Disqus shortname for the site
 
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
-    clientID    : # GitHub Application Client ID
-    clientSecret: # GitHub Application Client Secret
-    repository  : # GitHub repo
-    owner       : # GitHub repo owner
+    clientID    : ed6f4e4c6428434ec543 # GitHub Application Client ID
+    clientSecret: 88701e2fb086a1547c38f6241aa4c5c7741db7a7 # GitHub Application Client Secret
+    repository  : blog-comments # GitHub repo
+    owner       : fuyi501 # GitHub repo owner
     admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-      # - your GitHub Id
+      - fuyi501
 
 
 ## => Pageview
@@ -143,7 +143,7 @@ analytics:
   ## Google Analytics
   google:
     tracking_id : UA-120122698-1 # Google Analytics id for the site
-    anonymize_ip: true # Anonymize IP tracking for Analytics
+    anonymize_ip: false # Anonymize IP tracking for Analytics
 
 
 ## => Build
@@ -175,12 +175,13 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: article
-      license: true
+      layout: article 
+      license: true # licence
       aside:
-        toc: true
+        toc: true # 右侧文章 toc
       show_edit_on_github: true
-      pageview: true
+      comment: true # 是否开启评论支持，默认开启，设置为 false 关闭。
+      pageview: true # 是否开启阅读量统计，默认关闭，设置为 true 开启。
 
 
 ## => Plugins

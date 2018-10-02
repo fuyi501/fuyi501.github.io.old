@@ -38,8 +38,8 @@
 <meta name="theme-color" content="#ffffff">
 <!-- end favicon -->
 
-<!-- {%- include snippets/prepend-baseurl.html path='/assets/css/main.css' -%} -->
-<link rel="stylesheet" type="text/css" href="https://fuwenwei.com/assets/css/main.css">
+{%- include snippets/prepend-baseurl.html path='/assets/css/main.css' -%}
+<link rel="stylesheet" type="text/css" href="{{ __return }}">
 
 {%- include snippets/get-sources.html -%}
 {%- assign _sources = __return -%}
