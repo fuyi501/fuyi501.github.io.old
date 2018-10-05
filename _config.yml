@@ -17,10 +17,10 @@
 ## => Site Settings
 ##############################
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
-highlight_theme: tomorrow-night-bright # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : https://www.fuwenwei.com # the base hostname & protocol for your site e.g. https://www.someone.com
+highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
+url     : https://blog.fuwenwei.com # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : 付文伟
+title   : 付文伟的博客
 description: > # this means to ignore newlines until "Language & timezone"
   付文伟的博客
 
@@ -36,7 +36,7 @@ timezone: Asia/Shanghai # see https://en.wikipedia.org/wiki/List_of_tz_database_
 author:
   type      : # "person" (default), "organization"
   name      : Wenwei
-  url       : https://fuwenwei.com
+  url       : https://blog.fuwenwei.com
   avatar    : # path or url of avatar image
   bio       : 简单快乐
   email     : 2516800961@qq.com

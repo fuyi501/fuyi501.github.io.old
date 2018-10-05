@@ -1,6 +1,6 @@
 ---
 title:  vue 数据 data 赋值问题
-key: sum-20180105
+key: 20171130
 tags: vue
 comment: true
 ---

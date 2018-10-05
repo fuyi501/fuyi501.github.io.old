@@ -1,6 +1,6 @@
 ---
 title:  服务器常用软件安装及配置
-key: sum-20180103
+key: key-20180101
 tags: 服务器配置
 comment: true
 ---

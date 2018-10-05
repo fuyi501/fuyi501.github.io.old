@@ -1,6 +1,6 @@
 ---
 title:  python 代码片段
-key: sum-20180104
+key: key-20180201
 tags: python
 comment: true
 ---

@@ -1,6 +1,6 @@
 ---
 title:  服务器配置 ssl
-key: sum-20180105
+key: key-20180110
 tags: 服务器 ssl
 comment: true
 ---

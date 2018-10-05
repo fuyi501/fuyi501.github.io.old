@@ -1,6 +1,6 @@
 ---
 title:  jekyll 博客安装
-key: sum-20180101
+key: 20170102
 tags: 博客 
 comment: true 
 ---
