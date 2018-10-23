@@ -8,6 +8,7 @@ comment: true
 ## 本地测试环境配置 https
 
 ### https 简介
+
 1. https简介
 HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据
 2. https协议原理
@@ -20,11 +21,14 @@ HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加�
 `openssl genrsa -des3 -out server.key 1024`
 
 输入密码，确认密码，自己随便定义，但是要记住，后面会用到。
+
 2. 创建服务器证书的申请文件 server.csr
 
 `openssl req -new -key server.key -out server.csr`
 
 输出内容为：
+
+```sh
 Enter pass phrase for root.key: ← 输入前面创建的密码 
 
 Country Name (2 letter code) [AU]:CN ← 国家代号，中国输入CN 
@@ -48,6 +52,7 @@ to be sent with your certificate request
 A challenge password []: ← 可以不输入 
 
 An optional company name []: ← 可以不输入
+```
 
 4. 备份一份服务器密钥文件
 
@@ -63,7 +68,7 @@ An optional company name []: ← 可以不输入
 
 ### 配置 nginx 服务器
 
-1. 下面为配置文件 /etc/nginx/conf.d/xxx.conf
+1. 下面为配置文件 `/etc/nginx/conf.d/xxx.conf`
 
 ```bash
 server{
@@ -93,7 +98,7 @@ HTTPS 是 HTTP over Secure Socket Layer，以安全为目标的 HTTP 通道，�
 
 Mixed Content: The page at ‘https://www.taobao.com/‘ was loaded over HTTPS, but requested an insecure image ‘http://g.alicdn.com/s.gif’. This content should also be served over HTTPS.
 
-CSP设置upgrade-insecure-requests
+CSP 设置 upgrade-insecure-requests
 
 好在 W3C 工作组考虑到了我们升级 HTTPS 的艰难，在 2015 年 4 月份就出了一个 Upgrade Insecure Requests 的草案（http://www.w3.org/TR/mixed-content/），他的作用就是让浏览器自动升级请求。
 
@@ -103,12 +108,10 @@ header("Content-Security-Policy: upgrade-insecure-requests");
 
 我们的页面是 https 的，而这个页面中包含了大量的 http 资源（图片、iframe等），页面一旦发现存在上述响应头，会在加载 http 资源时自动替换成 https 请求。可以查看 google 提供的一个 demo（https://googlechrome.github.io/samples/csp-upgrade-insecure-requests/index.html）：
 
-当然，如果我们不方便在服务器/Nginx 上操作，也可以在页面中加入 meta 头：
+当然，如果我们不方便在服务器 Nginx 上操作，也可以在页面中加入 meta 头：
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 ```
-
-目前支持这个设置的还只有 chrome 43.0，不过我相信，CSP 将成为未来 web 前端安全大力关注和使用的内容。而 upgrade-insecure-requests 草案也会很快进入 RFC 模式。
 
 从 W3C 工作组给出的 example（http://www.w3.org/TR/upgrade-insecure-requests/#examples），可以看出，这个设置不会对外域的 a 链接做处理，所以可以放心使用。

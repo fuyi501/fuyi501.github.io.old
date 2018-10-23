@@ -1,5 +1,5 @@
 ---
-title: thinkjs教程安装及运行
+title: thinkjs 教程安装及运行
 key: 20170630
 tags: thinkjs
 comment: true
@@ -17,31 +17,41 @@ comment: true
 
 通过下面的命令即可安装 ThinkJS：
 
-	npm install thinkjs@2 -g --verbose
-	
+```sh
+npm install thinkjs@2 -g --verbose
+```
+
 如果安装很慢的话，可以尝试使用 taobao 的源进行安装。具体如下：
 
-	npm install thinkjs@2 -g --registry=https://registry.npm.taobao.org --verbose
-	
+```sh
+npm install thinkjs@2 -g --registry=https://registry.npm.taobao.org --verbose
+```
+
 安装完成后，可以通过` thinkjs --version` 或 `thinkjs -V `命令查看安装的版本。
 
 ## 创建项目
 
 ThinkJS 安装完成后，就可以通过下面的命令创建项目:
 
-	thinkjs new project_path; #project_path为项目存放的目录
+```sh
+thinkjs new project_path; # project_path 为项目存放的目录
+```
 
 ## 安装依赖
 
 项目安装后，进入项目目录，执行 npm install 安装依赖，可以使用 taobao 源进行安装。
 
-	npm install --registry=https://registry.npm.taobao.org --verbose
+```sh
+npm install --registry=https://registry.npm.taobao.org --verbose
+```
 
 ## 启动项目
 
 在项目目录下执行命令 
-	
-	npm start
+
+```sh	
+npm start
+```
 
 出现以下信息表示运行成功
 
@@ -57,14 +67,14 @@ ThinkJS 安装完成后，就可以通过下面的命令创建项目:
 
 ## 访问项目
 
-打开浏览器，访问http://127.0.0.1:8360/ 即可。
+打开浏览器，访问` http://127.0.0.1:8360/ ` 即可。
 
 ![thinkjs运行图][2]
 
 
 ## 更改端口号
 
-打开` /src/common/config/config.js` 文件，设置端口 为9000，访问超时为 30s
+打开` /src/common/config/config.js ` 文件，设置端口 为9000，访问超时为 30s
 
 ```js
 'use strict';
@@ -81,7 +91,7 @@ export default {
 
 ## 修改模板引擎
 
-打开` /src/common/config/view.js` 文件，默认的模板引擎是 ejs，可以更改成 nunjucks 
+打开` /src/common/config/view.js ` 文件，默认的模板引擎是 ` ejs `，可以更改成` nunjucks `
 
 ```js
 'use strict';
@@ -99,7 +109,8 @@ export default {
   }
 };
 ```
-修改为 `nunjucks` 
+
+修改模板引擎为 `nunjucks` 
 
 ```js
 'use strict';
@@ -123,7 +134,7 @@ export default {
 
 总的来说，thinkjs 使用还是很简单的，只需要对应控制器和视图就可以，详细内容请看[官网介绍](1)，下面来简单介绍下，修改控制器内容并在前端展示。
 
-打开 `src/home/controler/index.js` 文件，添加一句话 
+打开 ` src/home/controler/index.js ` 文件，添加一句话 
 
 ```js
 'use strict';
@@ -142,6 +153,7 @@ export default class extends Base {
   }
 }
 ```
+
 再打开 `view/home/index_index.html` 文件，再 `<h1>` 下面添加 
 
 ```html
@@ -150,10 +162,11 @@ export default class extends Base {
       <h2>{{ title }}</h2>
 </div>
 ```
+
 为了显示好看，设置`<h2>` 的css样式如下：
 
 ```css
-h2{font-size: 26px;color:#fff;font-weight: normal;margin-top: 40px;}
+h2 { font-size: 26px; color:#fff; font-weight: normal; margin-top: 40px; }
 ```
 
 这时重启 项目 `npm start` ，输出如下：
@@ -170,7 +183,7 @@ h2{font-size: 26px;color:#fff;font-weight: normal;margin-top: 40px;}
  
  ```
  
- 端口已经变成了 `9000`，浏览器打开 http://localhost:9000/ ，发现 `Hello Thinkjs` 已经显示出来了，如下：
+ 端口已经变成了 `9000`，浏览器打开 ` http://localhost:9000/ `，发现 `Hello Thinkjs` 已经显示出来了，如下：
  
  ![enter description here][3]
  

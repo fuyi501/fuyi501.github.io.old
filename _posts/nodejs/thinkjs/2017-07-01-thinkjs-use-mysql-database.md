@@ -1,5 +1,5 @@
 ---
-title: thinkjs操作mysql数据库
+title: thinkjs 操作 mysql 数据库
 key: 20170701
 tags: thinkjs
 comment: true
@@ -11,7 +11,7 @@ comment: true
 
 首先在 mysql 中创建一个数据库 `test`，然后新建一个表 `students`，插入一些数据，如下所示：
 
-```mysql
+```sql
 create database test;
 use test;
 create table students(
@@ -37,17 +37,17 @@ insert into test.students value(8,'张三','男','12345678');
 
 在 thinkjs 中配置 mysql ，非常的简单，打开 `src/common/config/db.js`，默认配置如下：
 
-```mysql
+```js
 export default {
   type: 'mysql',
   adapter: {
     mysql: {
       host: '127.0.0.1',
-      port: '',  //端口号
-      database: '',  //数据库名字
-      user: '',  //数据库账号
-      password: '',  //数据库密码
-      prefix: '',  //数据库前缀
+      port: '',  // 端口号
+      database: '',  // 数据库名字
+      user: '',  // 数据库账号
+      password: '',  // 数据库密码
+      prefix: '',  // 数据库前缀
       encoding: 'utf8'
     },
     mongo: {
@@ -63,23 +63,23 @@ export default {
 
 我们还是只需要 操作控制器和视图就可以了。
 
-修改 `src/home/controller/index.js` 中的 indexAction 方法，这个 indexAction 就是一个操作，这个方法就是用来处理 index 页面的，在这个方法中使用 `this.model('数据库下表的名字')`就可以连接数据库了。
+修改 ` src/home/controller/index.js ` 中的 ` indexAction ` 方法，这个 ` indexAction ` 就是一个操作，这个方法就是用来处理 ` index ` 页面的，在这个方法中使用 `this.model('数据库下表的名字')` 就可以连接数据库了。
 
-注意：indexAction 方法默认是不带 `async` 参数的，这是为了配合 方法中的 await 使用的，将 nodejs 的并行执行改为 串行执行。
+注意：` indexAction ` 方法默认是不带 `async` 参数的，这是为了配合 方法中的 `await` 使用的，将 nodejs 的异步执行改为 同步执行。
 
 下面我们来尝试一下：
 
 ```js
 async indexAction(){
-    //auto render template file index_index.html
-    this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
+  // auto render template file index_index.html
+  this.assign("title","Hello Thinkjs") // 给title赋值为 Hello Thinkjs
 
-    let stu = await this.model('students').select();
-   
-    console.log("stu:",stu);
- 
-    return this.display();
-  }
+  let stu = await this.model('students').select();
+  
+  console.log("stu:",stu);
+
+  return this.display();
+}
 ```
 
 刷新页面，输出：
@@ -111,7 +111,7 @@ stu: _class {
   _db: null,
   _data: {},
   _options: {} }
-  ```
+```
 
 说明返回的 stu 是一个数据表对象，官网称为 `模型实例化对象` 。下面来操作一下这个数据表。我们可以使用 `select` 方法查询多条数据，返回值为数据。更多操作方法，请看 [thinkjs官网 CRUD 操作][2]。
 
@@ -119,16 +119,17 @@ stu: _class {
 
 ```js
 async indexAction(){
-    //auto render template file index_index.html
-    this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
+  //auto render template file index_index.html
+  this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
 
-    let stu = await this.model('students').select();
+  let stu = await this.model('students').select();
 
-    console.log("stu:",stu);
+  console.log("stu:",stu);
 
-    return this.display();
-  }
-  ```
+  return this.display();
+}
+```
+
 刷新页面输出：
 
 ```bash
@@ -143,21 +144,21 @@ stu: [ RowDataPacket { id: 1, name: '张三', sex: '男', phone: '123
   RowDataPacket { id: 8, name: '张三', sex: '男', phone: '12345678' } ]
 ```
 
-可以看出来 ，返回值是一个 json 数据。有了 json 数据，我们需要将他传递到前端页面，在前端页面上展示这些数据，这个和上一篇文章中的 title 的赋值是一样的。我们使用`this.assign()` 方法，将 json 数据传递到前端页面，如下：
+可以看出来 ，返回值是一个 json 数据。有了 json 数据，我们需要将他传递到前端页面，在前端页面上展示这些数据，这个和上一篇文章中的 title 的赋值是一样的。我们使用 `this.assign()` 方法，将 json 数据传递到前端页面，如下：
 
 ```js
 async indexAction(){
-    //auto render template file index_index.html
-    this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
+  //auto render template file index_index.html
+  this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
 
-    let stu = await this.model('students').select();
+  let stu = await this.model('students').select();
 
-    console.log("stu:",stu);
+  console.log("stu:",stu);
 
-    this.assign("stu_infos",stu)
+  this.assign("stu_infos",stu)
 
-    return this.display();
-  }
+  return this.display();
+}
 ```
 
 ## 前端展示 mysql 数据
@@ -165,7 +166,7 @@ async indexAction(){
 上面说 通过使用 ` this.assign("stu_info",stu)` 方法，讲返回的 stu 数据赋值给 stu_info 并传递到了前端页面，那到底有没有呢？
 下面我们配合 ` nunjucks` 模板引擎，在前端把刚刚查询到的 mysql 数据库中的数据展示出来。 ` nunjucks` 模板引擎 的使用方法请参考 [thinkjs官网 nunjucks模板引擎][3]。
 
-打开 `view/home/index_index.html` ，我们删掉一些不用的，使其看起来简单一些，如下：
+打开 ` view/home/index_index.html ` ，我们删掉一些不用的，使其看起来简单一些，如下：
 
 ```html
 <!DOCTYPE html>
@@ -201,9 +202,7 @@ code{  padding: 2px 4px;font-size: 90%;color: #c7254e;background-color: #f9f2f4;
     <div class="list">
       <div class="item">
         <div class="step">1</div>
-
       </div>
-    
     </div>
   </div>
 </body>
@@ -214,20 +213,18 @@ code{  padding: 2px 4px;font-size: 90%;color: #c7254e;background-color: #f9f2f4;
 
 ```html
 <div class="content">
-    <div class="list">
-      {% for stu in stu_infos %}
-      <div class="item">
-
-        <div class="step"> {{ stu.id }} </div>
-        <p>
-          {{ stu.name }} {{ stu.sex }} {{ stu.phone }}
-        </p>
-
-      </div>
-      {% endfor %}
+  <div class="list">
+    {% for stu in stu_infos %}
+    <div class="item">
+      <div class="step"> {{ stu.id }} </div>
+      <p>
+        {{ stu.name }} {{ stu.sex }} {{ stu.phone }}
+      </p>
     </div>
+    {% endfor %}
   </div>
-  ```
+</div>
+```
   
  刷新页面，展示如下：
  

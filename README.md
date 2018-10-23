@@ -28,7 +28,7 @@ bundle exec jekyll serve # 启动项目
 
 ## 配置 
 
-[具体详情](https://tianqi.name/jekyll-TeXt-theme/docs/zh/configuration)
+[配置详情](https://tianqi.name/jekyll-TeXt-theme/docs/zh/configuration)
 
 [参考项目1](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/docs/_config.yml)
 

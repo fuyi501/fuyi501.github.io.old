@@ -5,16 +5,7 @@ tags: thinkjs
 comment: true
 ---
 
-
-Application created by [ThinkJS](http://www.thinkjs.org)
-
 > 上一篇中介绍了 thinkjs 操作 mysql 数据库的方法，并进行了前端展示，现在来看一下 thinkjs 如何操作 mongodb 数据库
-
-## node 版本
-
-```
-v6.9.4
-```
 
 ## 准备数据库
 
@@ -44,7 +35,8 @@ export default {
   }
 };
 ```
-因为没有使用用户权限，所以这里不需要填写用户和密码。
+
+因为没有设置用户权限，所以这里不需要填写用户和密码。
 
 更详细的内容请参考 [thinkjs官网 MongoDB](https://thinkjs.org/zh-cn/doc/2.2/model_mongodb.html)
 
@@ -60,15 +52,15 @@ export default {
 
 ```js
 async indexAction(){
-    //auto render template file index_index.html
-    this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
+  //auto render template file index_index.html
+  this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
 
-    let stu = await this.model('student').select();
+  let stu = await this.model('student').select();
 
-    console.log("stu:",stu);
+  console.log("stu:",stu);
 
-    return this.display();
-  }
+  return this.display();
+}
 ```
 
 刷新页面，输出：
@@ -88,17 +80,17 @@ stu: [ { _id: 1, sage: 10, sname: 'xiao 1' },
 
 ```js
 async indexAction(){
-    //auto render template file index_index.html
-    this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
+  //auto render template file index_index.html
+  this.assign("title","Hello Thinkjs") //给title赋值为 Hello Thinkjs
 
-    let stu = await this.model('student').select();
+  let stu = await this.model('student').select();
 
-    console.log("stu:",stu);
+  console.log("stu:",stu);
 
-    this.assign("stu_infos",stu)
+  this.assign("stu_infos",stu)
 
-    return this.display();
-  }
+  return this.display();
+}
 ```
 
 ## 前端展示 mongodb 数据
@@ -143,9 +135,7 @@ code{  padding: 2px 4px;font-size: 90%;color: #c7254e;background-color: #f9f2f4;
     <div class="list">
       <div class="item">
         <div class="step">1</div>
-
       </div>
-
     </div>
   </div>
 </body>
@@ -155,22 +145,18 @@ code{  padding: 2px 4px;font-size: 90%;color: #c7254e;background-color: #f9f2f4;
 下面我们来使用 `nunjucks` 模板引擎 ，关键代码如下，其他代码不变。
 
 ``` html
-
-  <div class="content">
-    <div class="list">
-      {% for stu in stu_infos %}
-      <div class="item">
-
-       <div class="step"> {{ stu._id }} </div>
-        <p>
-          名字：{{ stu.sname }}  ， 年龄：{{ stu.sage }} 
-        </p>
-
-      </div>
-      {% endfor %}
+<div class="content">
+  <div class="list">
+    {% for stu in stu_infos %}
+    <div class="item">
+      <div class="step"> {{ stu._id }} </div>
+      <p>
+        名字：{{ stu.sname }}  ， 年龄：{{ stu.sage }} 
+      </p>
     </div>
+    {% endfor %}
   </div>
-
+</div>
 ```
 
 刷新页面，展示如下：

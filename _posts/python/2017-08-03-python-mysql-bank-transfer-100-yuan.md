@@ -7,7 +7,7 @@ comment: true
 
 ## 创建一个数据库
 
-```mysql
+```sql
 create table `account` (
 		`acct_id` int(11) default null comment '账户ID',
 		`money` int(11) default null comment '余额'
@@ -17,14 +17,12 @@ insert into test.account values(11, 110);
 insert into test.account values(12, 10);
 ```
 
-
 ## 完整代码
 
 ```python
 # coding:utf8  #别忘了设置python编码
 import sys
 import MySQLdb as mdb
-
 
 class TransferMoney(object):
     def __init__(self, conn):
@@ -93,7 +91,6 @@ class TransferMoney(object):
         except Exception as e:
             self.conn.rollback()
             raise e
-
 
 if __name__ == '__main__':
     source_id = sys.argv[1]

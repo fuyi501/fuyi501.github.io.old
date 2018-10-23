@@ -1,13 +1,16 @@
 ---
-title: wasm 编译和安装
+title: wasm 编译 ffmpeg
 key: key-20181001
 tags: wasm webAssembly emsdk c++
 comment: true 
 ---
 
+本文还未验证成功。
+{:.error}
+
 ## 编译 ffmpeg 为 wasm 版本
 
-我一开始以为难度会很大，后来发现并没有那么大，因为有一个[videoconverter.js](https://bgrins.github.io/videoconverter.js/)已经转过了（它是一个借助ffmpeg在网页实现音视频转码的），关键在于把一些没用的特性在configure的时候给disable掉，不然编译的时候会报语法错误。这里使用的是[emsdk](https://github.com/juj/emsdk)转的wasm，emsdk的安装方法在它的[安装教程](https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html)已经说得很明白，主要是使用脚本判定系统下载不同编译好的文件。下载好之后就会有几个可执行文件，包括emcc、emc++、emar等命令，emcc是C的编译器，emc++是C++的编译器，而emar是用于把不同的.o库文件打包成一个.a文件的。
+我一开始以为难度会很大，后来发现并没有那么大，因为有一个 [videoconverter.js](https://bgrins.github.io/videoconverter.js/) 已经转过了（它是一个借助 ffmpeg 在网页实现音视频转码的），关键在于把一些没用的特性在 configure 的时候给disable掉，不然编译的时候会报语法错误。这里使用的是[emsdk](https://github.com/juj/emsdk)转的wasm，emsdk的安装方法在它的[安装教程](https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html)已经说得很明白，主要是使用脚本判定系统下载不同编译好的文件。下载好之后就会有几个可执行文件，包括emcc、emc++、emar等命令，emcc是C的编译器，emc++是C++的编译器，而emar是用于把不同的.o库文件打包成一个.a文件的。
 
 先要在[ffmpeg](https://www.ffmpeg.org/)的官网下载源码。
 
@@ -36,7 +39,7 @@ emconfigure ./configure --cc="emcc"
 
 make是开始编译的阶段，执行以下命令进行编译：
 
-```
+```sh
 emmake make
 ```
 编译需要耗费
@@ -50,13 +53,12 @@ emmake make
 ![mark](http://images.fuyix.cn/blog/181009/0i0lCG1g2J.png?imageslim)
 
 
-
+```sh
 cp ffmpeg-4.0.2/libavcodec/libavcodec.a ./lib2/
 cp ffmpeg-4.0.2/libavformat/libavformat.a ./lib2/
 cp ffmpeg-4.0.2/libavutil/libavutil.a ./lib2/
 cp ffmpeg-4.0.2/libswresample/libswresample.a ./lib2/
 cp ffmpeg-4.0.2/libswscale/libswscale.a ./lib2/
-
 
 emcc libavcodec.a -o libavcodec.bc
 emcc libavformat.a -o libavformat.bc
@@ -64,9 +66,9 @@ emcc libavutil.a -o libavutil.bc
 emcc libswresample.a -o libswresample.bc
 emcc libswscale.a -o libswscale.bc
 
-
+# 下面这一步出错，暂时还没有找到解决办法。
 emcc web.c process.c ../lib2/libavformat.bc ../lib2/libavcodec.bc ../lib2/libswscale.bc ../lib2/libswresample.bc ../lib2/libavutil.bc -Os -s WASM=1 -o index.html -s EXTRA_EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]' -s ALLOW_MEMORY_GROWTH=1 -s TOTAL_MEMORY=16777216
-
+```
 
 参考文献：
 

@@ -7,7 +7,7 @@ comment: true
 
 ## 创建工作目录
 
-```bash
+```sh
 mkdir ~/opencv-test
 cd ~/opencv-test
 vim DisplayImage.cpp
@@ -72,7 +72,7 @@ make
 ./DisplayImage lena.jpg
 ```
 
-# 测试 opencv 安装成功-make测试
+# 测试 opencv 安装成功 - make测试
 
 ## 创建文件及编写代码
 

@@ -5,7 +5,6 @@ tags: nginx 服务器
 comment: true
 ---
 
-
 ## Nginx 服务器的配置
 
 Nginx 服务器的使用实际上重点就在于它的配置，作为代理服务器，你可以在服务器上启动多个应用，由 Nginx 配置多个域名，实现服务的代理。
@@ -15,7 +14,7 @@ nginx 版本号：nginx/1.10.0 (Ubuntu)
 
 登录服务器，进入到 Nginx 的安装目录 `/etc/nginx/`,可以看到很多文件
 
-```shell
+```sh
 ubuntu@VM-176-3-ubuntu:~$ cd /etc/nginx/
 ubuntu@VM-176-3-ubuntu:/etc/nginx$ ls
 conf.d          koi-utf     nginx.conf    sites-available  uwsgi_params
@@ -25,12 +24,13 @@ fastcgi_params  mime.types  scgi_params   snippets
 
 其中，`sites-enabled` 中存放着 nginx 的默认配置文件， `conf.d` 目录存放其他的配置文件，不过目前 `conf.d` 目录下是空的，以后可以将自定义的配置文件都放到这个目录下。
 
-```bash
+```sh
 ubuntu@VM-176-3-ubuntu:/etc/nginx$ ls sites-enabled/
 default
 ubuntu@VM-176-3-ubuntu:/etc/nginx$ ls conf.d/
 ubuntu@VM-176-3-ubuntu:/etc/nginx$ 
 ```
+
 在 nginx 目录下有一个 `nginx.conf` 配置文件，里面有这样两句代码：
 
 ```
@@ -53,7 +53,7 @@ blog_server  project_test
 
 thinkjs 测试项目自己带有 nginx.conf 配置文件，我们只需要将这个配置文件复制到 `/etc/nginx/conf.d` 目录下就可以了，详情请参考官方文档的 [使用 nginx 做反向代理](https://thinkjs.org/zh-cn/doc/2.2/deploy.html#toc-c69)配置多个域名，实现服务的代理。
 
-hexo测试项目因为里面没有 index.html 文件，所以要先 执行 `hexo g` 来生成静态文件，执行之后会生成一个 public 目录，public 目录下就会有 index.html 文件，然后我们需要为 hexo 项目写一个 conf 文件，内容类似如下：
+hexo 测试项目因为里面没有 index.html 文件，所以要先 执行 `hexo g` 来生成静态文件，执行之后会生成一个 public 目录，public 目录下就会有 index.html 文件，然后我们需要为 hexo 项目写一个 conf 文件，内容类似如下：
 
 ```
 server {
@@ -65,7 +65,6 @@ server {
 	    proxy_pass http://localhost:$node_port;
     }
 }
-
 ```
 
 注意：将 `server_name localhost` 里的 `localhost` 修改为对应的域名，将 `set $node_port 4000` 里的 `4000` 修改和项目里监听的端口一致。我这里使用默认的 `4000` 端口。

@@ -1,5 +1,5 @@
 ---
-title: vscode快捷键
+title: vscode 快捷键
 key: 20160215
 tags: vscode
 comment: true
@@ -192,7 +192,3 @@ Ctrl + Shift + C | 复制所选
 Ctrl + Shift + V | 复制到当前激活的终端
 Shift + PgUp / PgDown | 页面上下翻屏
 Ctrl + Home / End | 滚动到页面头部或尾部
-
-## 总结
-
-所有翻译肯定都不是标译的啦.....，我的翻译都是比较接近口语化和使用的
