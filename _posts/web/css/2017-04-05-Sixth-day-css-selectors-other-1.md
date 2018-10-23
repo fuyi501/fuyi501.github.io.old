@@ -1,5 +1,5 @@
 ---
-title: CSS选择器-其他1
+title: CSS3 选择器-其他1
 key: 20170405-01
 tags: css3
 comment: true

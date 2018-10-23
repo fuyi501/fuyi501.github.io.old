@@ -1,5 +1,5 @@
 ---
-title: win-dll动态链接库缺失问题的解决办法
+title: win-dll 动态链接库缺失问题的解决办法
 key: 20160316
 tags: 动态链接库 DirectX
 comment: true

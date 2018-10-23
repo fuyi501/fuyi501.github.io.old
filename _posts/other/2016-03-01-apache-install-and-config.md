@@ -1,5 +1,5 @@
 ---
-title: apache安装和配置
+title: apache 安装和配置
 key: 20160301
 tags: apache
 comment: true

@@ -1,5 +1,5 @@
 ---
-title: CSS3文字与字体 text-overflow 与 word-wrap
+title: CSS3 文字与字体 text-overflow 与 word-wrap
 key: 20170402
 tags: css3
 comment: true

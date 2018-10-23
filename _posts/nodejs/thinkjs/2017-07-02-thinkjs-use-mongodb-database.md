@@ -1,5 +1,5 @@
 ---
-title: thinkjs操作mongodb数据库
+title: thinkjs 操作 mongodb 数据库
 key: 20170702
 tags: thinkjs
 comment: true

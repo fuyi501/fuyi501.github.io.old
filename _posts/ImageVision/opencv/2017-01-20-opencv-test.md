@@ -1,5 +1,5 @@
 ---
-title: 测试 opencv 安装成功-cmake测试
+title: 测试 opencv 安装成功
 key: 20170120
 tags: opencv
 comment: true

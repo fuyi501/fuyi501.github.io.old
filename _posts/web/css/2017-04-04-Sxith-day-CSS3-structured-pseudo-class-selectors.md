@@ -1,5 +1,5 @@
 ---
-title: CSS3 结构性伪类选择器—root
+title: CSS3 结构性伪类选择器 root
 key: 20170404-02
 tags: css3
 comment: true

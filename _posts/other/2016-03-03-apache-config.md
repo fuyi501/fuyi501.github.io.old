@@ -1,5 +1,5 @@
 ---
-title: apache配置
+title: apache 配置
 key: 20160303
 tags: apache
 comment: true
