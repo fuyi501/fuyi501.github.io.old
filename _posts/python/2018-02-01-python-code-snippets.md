@@ -70,7 +70,8 @@ items = [
     ]
 
 items1 = sorted(items,key=lambda i:i['age']) 
-print(items1) # 输出：[{'name': '张三', 'age': '30'}, {'name': '李四', 'age': '40'}, {'name': '王五', 'age': '50'}]
+print(items1) 
+# 输出：[{'name': '张三', 'age': '30'}, {'name': '李四', 'age': '40'}, {'name': '王五', 'age': '50'}]
 ```
 
 ## 定时任务
