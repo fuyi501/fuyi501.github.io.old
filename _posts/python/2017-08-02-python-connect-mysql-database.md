@@ -1,5 +1,5 @@
 ---
-title: python 使用 mysql 数据库
+title: python2.7 使用 mysql 数据库
 key: 20170802
 tags: 数据库 python
 comment: true
