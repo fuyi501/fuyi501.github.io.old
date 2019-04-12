@@ -3,31 +3,19 @@ layout: article
 key: page-about
 ---
 
-> 时间就像一条河流， 
-> 
-> 载着我们顺流而下， 
-> 
-> 遇到现实，
-> 
-> 需要决策，
->  
-> 但我们无法停留， 
-> 
-> 也无法回避， 
-> 
-> 只能以最好的方式应对。
-> 
-> -- -- --《原则》
+**悟已往之不谏，知来者之可追。实迷途其未远，觉今是而昨非。**
+{:.warning}
 
-## Skills
+## Skills | 技能
 
-- HTML5, CSS3, JavaScript(ES6)
-- Node.js, Vue.js, think.js
-- mysql, mongoDB, redis
-- nginx
-- python
-- 机器学习, 数据分析及可视化
-- 硬件开发, 智能硬件
+- **精通各种智能硬件开发，蓝牙，WI-FI，RFID，Zigbee等**
+- **硬件技能 绘制原理图，PCB图，焊接，单片机编程调试，嵌入式开发等**
+- **熟练使用 HTML5，CSS3，JavaScript，ES6**
+- **熟练使用 Node.js，Vue.js，think.js**
+- **熟练使用 mysql，mongoDB，redis**
+- **熟练使用 nginx**
+- **熟练使用 python**
+- **目前研究方向** `深度学习、计算机视觉、数据分析及可视化`{:.error}
 
 <!--more-->
 
