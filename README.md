@@ -20,10 +20,12 @@ excerpt_type: html
 ## 本地预览
 
 下载好代码后，确保自己已经安装完成 jekyll 和 bundle ，执行
+
 ```sh
 bundle install # 安装依赖
 bundle exec jekyll serve # 启动项目
 ```
+
 然后就可以访问 `http://localhost:4000` 来预览博客网站了
 
 ## 配置 
@@ -103,7 +105,6 @@ excerpt_type: html # text (default), html
 | **Mathjax** | 在文章中方便的加入数学公式，使用 MathML、LaTeX 和 ASCIIMathML 语法 | [示例](https://tianqi.name/jekyll-TeXt-theme/post/2017/07/07/mathjax.html) |
 | **Mermaid** | 在文章中方便的加入流程图 | [示例](https://tianqi.name/jekyll-TeXt-theme/post/2017/06/06/mermaid.html) |
 | **Chart**   | 在文章中方便的加入可交互的图表 | [示例](https://tianqi.name/jekyll-TeXt-theme/post/2017/05/05/chart.html) |
-
 
 ### 附加样式
 
